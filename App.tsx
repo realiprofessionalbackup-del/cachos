@@ -5,6 +5,7 @@ import ChatBot from './components/ChatBot';
 
 const App: React.FC = () => {
   const PIX_LINK = "https://typebot.co/ativadordecachos";
+  const WHATSAPP_ATACADO = "https://wa.me/message/BRJZMTHTIGC7G1";
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -169,7 +170,7 @@ const App: React.FC = () => {
       <section className="bg-white py-12 border-t border-slate-100 relative z-10">
         <div className="container mx-auto px-6 text-center">
           <a 
-            href="https://wa.me/5500000000000" 
+            href={WHATSAPP_ATACADO} 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex flex-col md:flex-row items-center justify-center gap-4 bg-emerald-500 hover:bg-emerald-600 text-white px-8 md:px-12 py-6 rounded-3xl shadow-2xl transition-all transform hover:scale-105 active:scale-95 group border-b-4 border-emerald-700"
