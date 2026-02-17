@@ -1,7 +1,5 @@
 {
   "name": "Definição Profissional para Cachos",
   "description": "Uma landing page de alta conversão para ativadores de cachos profissionais com ofertas exclusivas e consultoria inteligente via IA.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
+  "requestFramePermissions": []
 }
