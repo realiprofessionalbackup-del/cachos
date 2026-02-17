@@ -2,8 +2,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { ModelName } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
 const SYSTEM_INSTRUCTION = `
 Você é uma Especialista em Cabelos Cacheados e Consultora de Vendas para a marca "Definição Profissional".
 Seu objetivo é ajudar as clientes a escolherem o melhor combo de produtos.
@@ -21,7 +19,15 @@ Mantenha as respostas curtas e diretas.
 `;
 
 export async function askSpecialist(userMessage: string) {
+  const apiKey = process.env.API_KEY;
+  
+  if (!apiKey) {
+    console.warn("API_KEY não encontrada nas variáveis de ambiente.");
+    return "Olá! No momento estou em manutenção, mas você pode conferir nossos combos incríveis logo abaixo! ✨";
+  }
+
   try {
+    const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
       model: ModelName.FLASH,
       contents: userMessage,
