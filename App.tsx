@@ -4,8 +4,7 @@ import { COMBOS, FEATURES } from './constants';
 import ChatBot from './components/ChatBot';
 
 const App: React.FC = () => {
-  const PIX_LINK = "https://typebot.co/ativadordecachos";
-  const WHATSAPP_ATACADO = "https://wa.me/message/BRJZMTHTIGC7G1";
+  const WHATSAPP_LINK = "https://wa.me/5573988143062?text=Eu%20quero%20comprar%20kit%20de%20cachos%20agora%20mesmo";
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -133,30 +132,20 @@ const App: React.FC = () => {
                     
                     <div className="flex flex-col gap-2">
                       <a 
-                        href={PIX_LINK}
+                        href={WHATSAPP_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`w-full py-3 rounded-xl text-white font-bold text-sm shadow-md transition-all transform active:scale-95 flex items-center justify-center gap-2 ${
                           combo.color === 'emerald' ? 'bg-emerald-600 hover:bg-emerald-700' : 
                           combo.color === 'purple' ? 'bg-purple-600 hover:bg-purple-700' : 
-                          'bg-blue-600 hover:bg-blue-700'
+                          'border-blue-600 bg-blue-600 hover:bg-blue-700'
                         }`}
                       >
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                         </svg>
-                        QUERO NO PIX
+                        COMPRAR AGORA NO WHATSAPP
                       </a>
-                      
-                      <form method='post' action='https://cieloecommerce.cielo.com.br/transactionalvnext/order/buynow' target='blank'>
-                        <input type='hidden' name='id' value={combo.cieloId} />
-                        <button type="submit" className={`w-full py-3 rounded-xl text-white font-bold text-sm shadow-md transition-all transform active:scale-95 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900`}>
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                          </svg>
-                          CARTÃO DE CRÉDITO
-                        </button>
-                      </form>
                     </div>
                   </div>
                 </div>
@@ -170,7 +159,7 @@ const App: React.FC = () => {
       <section className="bg-white py-12 border-t border-slate-100 relative z-10">
         <div className="container mx-auto px-6 text-center">
           <a 
-            href={WHATSAPP_ATACADO} 
+            href={WHATSAPP_LINK} 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex flex-col md:flex-row items-center justify-center gap-4 bg-emerald-500 hover:bg-emerald-600 text-white px-8 md:px-12 py-6 rounded-3xl shadow-2xl transition-all transform hover:scale-105 active:scale-95 group border-b-4 border-emerald-700"
@@ -202,9 +191,14 @@ const App: React.FC = () => {
           <p className="text-xl md:text-2xl text-purple-200 mb-10 max-w-3xl mx-auto">
             Sabia que com investimentos acima de <strong>R$ 1.000</strong> você pode tener este mesmo produto de alta performance com a <strong>sua própria logo</strong>?
           </p>
-          <button className="bg-amber-400 hover:bg-amber-500 text-purple-900 px-10 py-5 rounded-2xl font-black text-xl shadow-2xl transition-all transform hover:scale-105 active:scale-95 uppercase">
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-amber-400 hover:bg-amber-500 text-purple-900 px-10 py-5 rounded-2xl font-black text-xl shadow-2xl transition-all transform hover:scale-105 active:scale-95 uppercase inline-block"
+          >
             Quero ter minha marca própria
-          </button>
+          </a>
         </div>
       </section>
 
@@ -290,8 +284,8 @@ const App: React.FC = () => {
           </p>
           
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
-            <a href={PIX_LINK} target="_blank" rel="noopener noreferrer" className="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-bold transition-all text-sm py-3 px-6">COMPRAR NO PIX</a>
-            <a href="#combos" className="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-xl font-bold transition-all text-sm py-3 px-6">VER COMBOS NO CARTÃO</a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-bold transition-all text-sm py-3 px-6">COMPRAR AGORA NO WHATSAPP</a>
+            <a href="#combos" className="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-xl font-bold transition-all text-sm py-3 px-6">VER COMBOS PROMOCIONAIS</a>
           </div>
 
           <div className="pt-12 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -306,7 +300,7 @@ const App: React.FC = () => {
 
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-        <a href="#combos" className="block w-full bg-purple-600 text-white text-center py-4 rounded-xl font-bold shadow-lg animate-pulse-gold">
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block w-full bg-purple-600 text-white text-center py-4 rounded-xl font-bold shadow-lg animate-pulse-gold">
           GARANTIR PROMOÇÃO AGORA
         </a>
       </div>
